@@ -5,6 +5,6 @@ import "gorm.io/gorm"
 type Poll struct {
 	gorm.Model
 	Name      string     `json:"name"`
-	User      User       `json:"user"`
+	UserID    uint       `json:"userId"`
 	Questions []Question `json:"questions"`
 }
