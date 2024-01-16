@@ -19,10 +19,7 @@ func ConnectToDB() {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
 
-	db.AutoMigrate(models.User{})
-	db.AutoMigrate(models.Poll{})
-	db.AutoMigrate(models.Question{})
-	db.AutoMigrate(models.Vote{})
+	db.AutoMigrate(models.User{}, models.Poll{}, models.Question{}, models.Vote{})
 
 	DB = db
 	log.Println("Successfully connected to database!")
