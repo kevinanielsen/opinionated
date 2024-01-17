@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/kevinanielsen/opinionated/src/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -18,8 +17,6 @@ func ConnectToDB() {
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
-
-	db.AutoMigrate(models.User{}, models.Poll{}, models.Question{}, models.Vote{})
 
 	DB = db
 	log.Println("Successfully connected to database!")
