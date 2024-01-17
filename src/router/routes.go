@@ -1,6 +1,7 @@
 package router
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/kevinanielsen/opinionated/ui"
@@ -9,11 +10,12 @@ import (
 
 func Router() {
 	e := echo.New()
-
 	e.StaticFS("/", ui.DistDirFS)
 
 	e.GET("/api", func(c echo.Context) error {
+		log.Println("GET /api")
 		return c.String(http.StatusOK, "Pong!")
 	})
+
 	e.Logger.Fatal(e.Start(":8080"))
 }

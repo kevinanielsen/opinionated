@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+async function ping() {
+  const response = await fetch('/api')
+    console.log(response)
+}
+
+ping();
 </script>
 
 <template>
