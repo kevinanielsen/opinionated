@@ -14,7 +14,7 @@ func Router() {
 
 	e.GET("/api", func(c echo.Context) error {
 		log.Println("GET /api")
-		return c.String(http.StatusOK, "Pong!")
+		return c.JSON(http.StatusOK, "Pong!")
 	})
 
 	e.Logger.Fatal(e.Start(":8080"))
